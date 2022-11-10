@@ -10,41 +10,33 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    .marquee-container {
+    .annoucement-container {
+        display: flex;
+        align-items: center;
         height: 60px;
-        overflow: hidden;
-        position: relative;
         width: 100%;
         color: white;
         background: #00000066;
         font-size: 1.2em;
+        overflow: hidden;
 
-
-        .marquee {
-          top: 50%;
-          transform: translateY(-50%);
-          left: 100%;
-          width: 100%;
-          overflow: hidden;
-          position: absolute;
-          white-space: nowrap;
-          animation: marquee 30s linear infinite;
-        }
-      
-        .marquee2 {
-          animation-delay: 15s;
+        span{
+            width: 100%;
+            white-space: nowrap;
+            animation: animate 20s infinite linear;
         }
 
+        @keyframes animate {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
       }
       
-      @keyframes marquee {
-        0% {
-          left: 100%;
-        }
-        100% {
-          left: -100%
-        }
-      }
+      
 
 
     .hero{
@@ -149,27 +141,15 @@
 
     .landing{
 
-        .marquee-container {
+        .annoucement-container {
             font-size: 1.1em;
-            .marquee {
+            span {
                 
-                animation: marquee 13s linear infinite;
-            }
-          
-            .marquee2 {
-              animation-delay: 40s;
+                animation: marquee 15s linear infinite;
             }
     
           }
 
-          @keyframes marquee {
-            0% {
-              left: 100%;
-            }
-            100% {
-              left: -100%
-            }
-          }
 
         .hero{
             display: flex;
@@ -207,6 +187,18 @@
     }
 }
 
+@media all and (max-width: 600px){
+
+    .landing{
+
+        .annoucement-container {
+            span {
+                width: 165%;
+                animation: animate 13s infinite linear;
+            }
+          }
+    }
+}
 
 @media all and (max-width: 425px){
 
