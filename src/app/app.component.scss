@@ -1,0 +1,230 @@
+.landing{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    align-items: center;
+    max-height: 100vh;
+    min-height: 100vh;
+    background-image: url("../assets/img/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .marquee-container {
+        height: 60px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        color: white;
+        background: #00000066;
+        font-size: 1.2em;
+
+
+        .marquee {
+          top: 50%;
+          transform: translateY(-50%);
+          left: 100%;
+          width: 100%;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          animation: marquee 30s linear infinite;
+        }
+      
+        .marquee2 {
+          animation-delay: 15s;
+        }
+
+      }
+      
+      @keyframes marquee {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -100%
+        }
+      }
+
+
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        &::after{
+            position: absolute;
+            width: 100%;
+            height: 80vh;
+            content: "";
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .hero-content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            img{
+                bottom: 0;
+                width: 50vh;
+                z-index: 1;
+                border-radius: 50%;
+            }
+
+            .texts{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                z-index: 1;
+                border-radius: 5px;
+                width: 423px;
+                align-items: center;
+                font-size: 1.2em;
+
+                span:first-child{
+                    align-self: flex-start;
+                    font-style: italic;
+                    font-weight: 900;
+                    text-shadow: 1px 1px 2px #4e4e4e;
+                    font-size: 1.3em;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                h1{
+                    font-family: 'gistesy';
+                    margin: 15px 0;
+                    color: #f56f36;
+                    font-weight: 900;
+                    font-size: 4em;
+                    text-shadow: 1px 1px 2px black;
+                }
+
+                .text{
+                    line-height: 28px;                
+                    font-size: 1.25em;
+                    font-weight: 100;
+                    text-shadow: 1px 1px 2px #202020;
+                    width: 100%;
+                    text-align: center;
+                }
+
+            }
+        }
+    }
+}
+
+@media all and (max-width: 958px){
+
+    .landing{
+
+        .hero{
+
+            .hero-content{
+    
+                img{
+                    width: 40vh;
+                }
+    
+                .texts{
+                    font-size: 0.9em;
+                    width: 280px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 768px){
+
+    .landing{
+
+        .marquee-container {
+            font-size: 1.1em;
+            .marquee {
+                
+                animation: marquee 13s linear infinite;
+            }
+          
+            .marquee2 {
+              animation-delay: 40s;
+            }
+    
+          }
+
+          @keyframes marquee {
+            0% {
+              left: 100%;
+            }
+            100% {
+              left: -100%
+            }
+          }
+
+        .hero{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+    
+            &::after{
+                position: absolute;
+                width: 100%;
+                height: 80vh;
+                content: "";
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+    
+            .hero-content{
+                flex-direction: column;
+    
+                img{
+                    width: 40vh;
+                }
+    
+                .texts{
+                    font-size: 0.9em;
+                    width: 280px;
+                }
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: 425px){
+
+    .landing{
+
+        .hero{
+    
+            .hero-content{
+                flex-direction: column;
+    
+                img{
+                    width: 32vh;
+                }
+    
+                .texts{
+                    width: 100%
+                }
+            }
+        }
+    }
+}
